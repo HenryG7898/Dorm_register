@@ -23,12 +23,12 @@ class Addtrainee extends Component
 
 
     protected $rules = [
-        'first_nm' => 'required|max:12',
-        'last_nm' => 'required|max:12',
+        'first_nm' => 'required|max:25',
+        'last_nm' => 'required|max:25',
         'gender' => 'required',
         'DOB' => 'required',
         'email' => 'required|email|unique:users',
-        'password' => 'required ',
+//        'password' => 'required ',
         'room' => 'required',
         'telephone' => 'required',
         'course' => 'required'
@@ -37,6 +37,8 @@ class Addtrainee extends Component
 
     public function newtrainee()
     {
+
+
         $this->validate();
 
         User::create([
@@ -51,8 +53,8 @@ class Addtrainee extends Component
             'telephone' => $this->telephone,
             'trainee_ID' => $this->trainee_ID,
         ]);
-        session()->flash('success', 'Trainee Added Successfully');
 
+        session()->flash('success', 'Trainee Added Successfully');
 
     }
 

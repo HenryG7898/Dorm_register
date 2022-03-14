@@ -20,7 +20,7 @@
                     <div class="">
                         <h2 class="text-3xl font-bold mb-10 text-gray-800 text-center">New Trainee</h2>
 
-                        <form class="space-y-5 space-x-1" wire:submit.prevent="newtrainee">
+                        <form class="space-y-5 space-x-1" wire:submit.prevent="newtrainee()">
                             <div class="grid grid-cols-3 gap-6 mt-4 sm:grid-cols-2">
                                 <div>
                                     <label class="block mb-1 font-bold text-gray-500">First Name</label>
@@ -50,7 +50,7 @@
                                 <div>
                                     <label class="block mb-1 font-bold text-gray-500">Gender</label>
                                     <select wire:model="gender" id="gender" class="w-full border-2 border-gray-200 p-3 rounded outline-none focus:border-purple-500">
-                                        <option value="">Select a Gender</option>
+                                        <option value="#">Select a Gender</option>
                                         <option value="Male">Male</option>
                                         <option value="Female">Female</option>
                                     </select>
