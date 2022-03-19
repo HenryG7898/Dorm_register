@@ -21,6 +21,5 @@ Route::view('', 'Admin.dashboard');
 Route::view('addtrainee', 'Admin.addtrainee');
 Route::view('addwarden', 'Admin.addwarden');
 Route::view('login', 'Login');
-Route::view('addtrainee','Admin.addtrainee');
-Route::view('add','Admin.addDorm');
-Route::view('marksheet','Admin.addprogram');
+Route::view('add', 'Admin.addDorm');
+Route::view('marksheet', 'Admin.addprogram');

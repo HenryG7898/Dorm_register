@@ -5,7 +5,7 @@ namespace Database\Factories;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
 
-class UserFactory extends Factory
+class TraineeFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -18,10 +18,13 @@ class UserFactory extends Factory
             'first_nm' => $this->faker->firstName(),
             'last_nm' => $this->faker->lastName(),
             'email' => $this->faker->unique()->safeEmail(),
-            'email_verified_at' => now(),
-            'warden_ID' => Str::random(10),
-            'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
-            'remember_token' => Str::random(10),
+            'trainee_ID' => Str::random(10),
+            'course' => "Amber Group",
+            'DOB' => $this->faker->date(),
+            'telephone' => $this->faker->phoneNumber(),
+            'gender' => "Male",
+            'room' => $this->faker->randomElement(["A1", "A2", "A3", "A4", "A5", "A6", "A7", "A8", "A10", "A11", "A12"])
+
         ];
     }
 
@@ -32,10 +35,6 @@ class UserFactory extends Factory
      */
     public function unverified()
     {
-        return $this->state(function (array $attributes) {
-            return [
-                'email_verified_at' => null,
-            ];
-        });
+        //
     }
 }
