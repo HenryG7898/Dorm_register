@@ -2,16 +2,15 @@
 
 namespace App\Http\Livewire;
 
-use App\Models\User;
+use App\Models\Trainee;
 use Livewire\Component;
 
 class Dashboard extends Component
 {
     public function render()
     {
-        $user = User::all();
+        $trainees = Trainee::all();
 
-        return view('livewire.dashboard',['user' => $user]);
-//        return view('livewire.dashboard');
+        return view('livewire.dashboard', ['trainees' => $trainees]);
     }
 }

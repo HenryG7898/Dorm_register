@@ -13,8 +13,6 @@ class Addtrainee extends Component
     public $gender;
     public $DOB;
     public $email;
-    public $password = '';
-//    public $user_type;
     public $room;
     public $telephone;
     public $trainee_ID;
@@ -26,8 +24,7 @@ class Addtrainee extends Component
         'last_nm' => 'required|max:12',
         'gender' => 'required',
         'DOB' => 'required',
-        'email' => 'required|email|unique:users',
-        'password' => 'required ',
+        'email' => 'required|email|unique:trainees',
         'room' => 'required',
         'telephone' => 'required',
         'course' => 'required'
