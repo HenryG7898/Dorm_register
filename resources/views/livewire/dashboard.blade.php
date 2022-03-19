@@ -29,7 +29,7 @@
                     </tr>
                     </thead>
                     @foreach($user as $users)
-                        @if ($users->user_type === 'student')
+                        @if ($users->role === 'trainee')
 
 
                             <tr class="bg-white lg:hover:bg-gray-100 flex lg:table-row flex-row lg:flex-row flex-wrap lg:flex-no-wrap mb-10 lg:mb-0">
@@ -37,8 +37,6 @@
                                 <td class="w-full lg:w-auto p-3 text-gray-800 text-center  border-b text-center block lg:table-cell relative lg:static">{{ $users->last_nm }}</td>
                                 <td class="w-full lg:w-auto p-3 text-gray-800 text-center  border-b text-center block lg:table-cell relative lg:static">{{ $users->email }}</td>
                                 <td class="w-full lg:w-auto p-3 text-gray-800 text-center  border-b text-center block lg:table-cell relative lg:static">{{ $users->DOB }}</td>
-                                {{--                            <td class="w-full lg:w-auto p-3 text-gray-800 text-center  border-b text-center block lg:table-cell relative lg:static"></td>--}}
-                                {{--                            <td class="w-full lg:w-auto p-3 text-gray-800 text-center  border-b text-center block lg:table-cell relative lg:static">(876){{$user->Phone_nb}}</td>--}}
                                 <td class="w-full lg:w-auto p-3 text-gray-800 text-center  border-b text-center block lg:table-cell relative lg:static">{{ $users->gender }}</td>
                                 <td class="w-full lg:w-auto p-3 text-gray-800 text-center  border-b text-center block lg:table-cell relative lg:static">
                                     <a href="{{ url('editstudent/'.$users->id) }}" class="btn btn-primary p-2 text-white rounded bg-black hover:bg-green-500 hover:text-black" >Edit</a>
@@ -48,12 +46,9 @@
                         @endif
                     @endforeach
                 </table>
-                <div>
+                   <div>
                 </div>
             </div>
-
-
-
         </div>
 
 

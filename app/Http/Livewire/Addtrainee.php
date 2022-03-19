@@ -28,7 +28,6 @@ class Addtrainee extends Component
         'gender' => 'required',
         'DOB' => 'required',
         'email' => 'required|email|unique:users',
-//        'password' => 'required ',
         'room' => 'required',
         'telephone' => 'required',
         'course' => 'required'
@@ -41,7 +40,7 @@ class Addtrainee extends Component
 
         $this->validate();
 
-        User::create([
+        Trainee::create([
             'first_nm' => $this->first_nm,
             'last_nm'  => $this->last_nm,
             'DOB'  => $this->DOB,
