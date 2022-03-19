@@ -15,7 +15,7 @@ class CreateAddinfosTable extends Migration
     {
         Schema::create('addinfos', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('student_id')->constrained('users','id');
+            $table->foreignId('student_id')->constrained('trainees','id');
             $table->string('first_nm');
             $table->string('last_nm');
             $table->string('relationship');

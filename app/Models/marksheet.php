@@ -13,4 +13,8 @@ class marksheet extends Model
         'student_id',
          'mark',
     ];
+
+    public function trainee(){
+        return $this->belongsTo(Trainee::class, 'id', 'id');
+    }
 }

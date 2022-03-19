@@ -15,8 +15,8 @@ class CreateMarksheetsTable extends Migration
     {
         Schema::create('marksheets', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('student_id')->constrained('users','id');
-            $table->bigInteger('mark');
+            $table->foreignId('student_id')->constrained('trainees','id');
+            $table->bigInteger('mark')->default(0);
             $table->timestamps();
         });
     }

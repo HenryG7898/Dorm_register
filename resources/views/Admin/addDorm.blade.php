@@ -1,5 +1,5 @@
 @extends('layout.admin')
 
 @section('content')
-    @livewire('add-dorm')
+    @livewire('addtosheet')
 @endsection
