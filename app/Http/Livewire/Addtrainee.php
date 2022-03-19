@@ -4,7 +4,6 @@ namespace App\Http\Livewire;
 
 use App\Models\Trainee;
 use Illuminate\Support\Str;
-use App\Models\User;
 use Livewire\Component;
 
 class Addtrainee extends Component
@@ -23,12 +22,12 @@ class Addtrainee extends Component
 
 
     protected $rules = [
-        'first_nm' => 'required|max:25',
-        'last_nm' => 'required|max:25',
+        'first_nm' => 'required|max:12',
+        'last_nm' => 'required|max:12',
         'gender' => 'required',
         'DOB' => 'required',
         'email' => 'required|email|unique:users',
-//        'password' => 'required ',
+        'password' => 'required ',
         'room' => 'required',
         'telephone' => 'required',
         'course' => 'required'
@@ -37,11 +36,9 @@ class Addtrainee extends Component
 
     public function newtrainee()
     {
-
-
         $this->validate();
 
-        User::create([
+        Trainee::create([
             'first_nm' => $this->first_nm,
             'last_nm'  => $this->last_nm,
             'DOB'  => $this->DOB,
@@ -53,9 +50,7 @@ class Addtrainee extends Component
             'telephone' => $this->telephone,
             'trainee_ID' => $this->trainee_ID,
         ]);
-
         session()->flash('success', 'Trainee Added Successfully');
-
     }
 
     public function updated()
