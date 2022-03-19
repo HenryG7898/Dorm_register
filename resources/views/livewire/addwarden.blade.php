@@ -18,7 +18,7 @@
                         </div>
                     @endif
                     <div>
-                        <h2 class="text-3xl font-bold mb-10 text-gray-800 text-center">New Trainee</h2>
+                        <h2 class="text-3xl font-bold mb-10 text-gray-800 text-center">New Dorm Warden</h2>
                         <form class="space-y-5 space-x-1" wire:submit.prevent="newtrainee">
                             <div class="grid grid-cols-1 gap-6 mt-4 md:grid-cols-2">
                                 <div>
