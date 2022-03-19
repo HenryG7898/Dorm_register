@@ -18,7 +18,9 @@ use Illuminate\Support\Facades\Route;
 //});
 
 Route::view('', 'Admin.dashboard');
-Route::view('addtrainee','Admin.addtrainee');
+Route::view('addtrainee', 'Admin.addtrainee');
+Route::view('addwarden', 'Admin.addwarden');
+Route::view('login', 'Login');
 
 Route::view('add','Admin.addDorm');
 Route::view('marksheet','Admin.addprogram');
