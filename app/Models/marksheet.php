@@ -11,7 +11,6 @@ class marksheet extends Model
 
     protected $fillable = [
         'student_id',
-         'registry',
-        'date'
+         'mark',
     ];
 }
