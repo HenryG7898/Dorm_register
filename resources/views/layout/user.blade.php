@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <link rel="stylesheet" href="{{ mix('css/app.css') }}">
+    @livewireStyles
 </head>
 <body>
 
@@ -44,6 +45,6 @@
 
     </div>
 </div>
-
+@livewireScripts
 </body>
 </html>

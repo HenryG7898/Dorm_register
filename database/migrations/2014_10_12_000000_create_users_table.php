@@ -17,13 +17,8 @@ class CreateUsersTable extends Migration
             $table->id();
             $table->string('first_nm');
             $table->string('last_nm');
-            $table->string('role')->default('trainee');
-            $table->string('trainee_ID');
-            $table->string('course');
-            $table->string('DOB');
-            $table->string('telephone');
-            $table->string('gender');
-            $table->string('room');
+            $table->string('role')->default('warden');
+            $table->string('warden_ID');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password')->nullable();
