@@ -8,13 +8,16 @@
                         <th class="py-4 px-6 bg-grey-lightest font-bold uppercase text-sm text-grey-dark border-b border-grey-light">Course</th>
                         <th class="py-4 px-6 bg-grey-lightest font-bold uppercase text-sm text-grey-dark border-b border-grey-light">Dorm</th>
                         <th class="py-4 px-6 bg-grey-lightest font-bold uppercase text-sm text-grey-dark border-b border-grey-light">Status</th>
-                        <th class="justify-center py-4 px-6 bg-grey-lightest font-bold uppercase text-sm text-grey-dark border-b border-grey-light">Action</th>
+                        <th class="text-center py-4 px-6 bg-grey-lightest font-bold uppercase text-sm text-grey-dark border-b border-grey-light">Action</th>
+{{--                        @if ($mark[0]->mark == 0)--}}
+{{--                            <td class="py-4 px-6 border-b border-grey-light">{{ ('Not Mark') }}</td>--}}
 
-                        {{--                        @if ($mark->mark === 0)--}}
+{{--                        @endif--}}
+{{--                        @if (!$mark[0]->mark == 2)--}}
 {{--                            <th class="justify-center py-4 px-6 bg-grey-lightest font-bold uppercase text-sm text-grey-dark border-b border-grey-light">Action</th>--}}
 {{--                        @else--}}
+{{--                            bbbr--}}
 {{--                            <th class="justify-center py-4 px-6 bg-grey-lightest font-bold uppercase text-sm text-grey-dark border-b border-grey-light">Action</th>--}}
-{{--    --}}
 {{--                        @endif--}}
                     </tr>
                 </thead>
@@ -38,17 +41,26 @@
                         @if ($marks->mark === 0)
                             <td class="flex justify-center">
                                 <form  class="px-2">
-                                    <button type="submit"  wire:click.prevent="present({{ $marks->id, 1 }})" class="btn btn-primary p-2 text-white rounded bg-black hover:bg-green-500 hover:text-black">Approve</button>
+                                    <button type="submit"  wire:click.prevent="present({{ $marks->id, 1 }})" class="btn btn-primary p-2 text-white rounded bg-black hover:bg-green-500 hover:text-black">Present</button>
                                 </form>
                                 <form  >
-                                    <button type="submit" wire:click.prevent="absent({{$marks->id,  2 }})"  class="btn btn-primary p-2 text-white rounded bg-black hover:bg-red-600 hover:text-black">Reject</button>
+                                    <button type="submit" wire:click.prevent="absent({{$marks->id,  2 }})"  class="btn btn-primary p-2 text-white rounded bg-black hover:bg-red-600 hover:text-black">Absent</button>
                                 </form>
                             </td>
-                        @else
+                        @elseif ($marks->mark === 1)
+
                             <td class="flex justify-center">
-{{--                                <form  >--}}
-{{--                                    <button type="submit" wire:click.prevent="absent({{$marks->id,  2 }})"  class="btn btn-primary p-2 text-white rounded bg-black hover:bg-red-600 hover:text-black">Reject</button>--}}
-{{--                                </form>--}}
+                                <form  >
+                                    <button type="submit" wire:click.prevent="absent({{$marks->id,  2 }})"  class="btn btn-primary p-2 text-white rounded bg-black hover:bg-red-600 hover:text-black">Absent</button>
+                                </form>
+                            </td>
+                        @elseif ($marks->mark === 2)
+
+                            <td class="flex justify-center">
+                                <form  >
+                                    <button type="submit"  wire:click.prevent="present({{ $marks->id, 1 }})" class="btn btn-primary p-2 text-white rounded bg-black hover:bg-green-500 hover:text-black">Present</button>
+
+                                </form>
                             </td>
                         @endif
                     </tr>

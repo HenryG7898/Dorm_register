@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire;
 
+use Illuminate\Support\Facades\DB;
 use App\Models\Trainee;
 use Livewire\Component;
 
@@ -9,6 +10,7 @@ class Marksheet extends Component
 {
     public function render()
     {
+//        $user = DB::table('trainee')->orderBy('room', 'asc')->get();
         $mark = \App\Models\marksheet::with('trainee')->get();
         return view('livewire.marksheet', ['mark'=>$mark]);
     }

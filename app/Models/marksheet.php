@@ -15,6 +15,6 @@ class marksheet extends Model
     ];
 
     public function trainee(){
-        return $this->belongsTo(Trainee::class, 'id', 'id');
+        return $this->belongsTo(Trainee::class, 'id', 'id')->orderby('first_nm', 'asc');
     }
 }
