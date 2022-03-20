@@ -14,6 +14,6 @@ class TraineeSeeder extends Seeder
      */
     public function run()
     {
-        Trainee::factory(10)->create();
+        Trainee::factory(30)->create();
     }
 }

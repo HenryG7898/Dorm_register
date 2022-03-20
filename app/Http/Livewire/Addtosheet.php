@@ -19,10 +19,23 @@ class Addtosheet extends Component
 
     public function addtrainee(){
 
-        marksheet::create([
-//            dd($this->student_id),
+        $choice = marksheet::where([
             'student_id' => $this->student_id,
-        ]);
+
+        ])->exists();
+        session()->flash('failure', 'Trainee Already Added Register');
+
+        if (!$choice) {
+            marksheet::create([
+                'student_id' => $this->student_id,
+            ]);
+        }
+
+//        marksheet::create([
+////            dd($this->student_id),
+//            'student_id' => $this->student_id,
+//        ])->exists();
+        session()->flash('success', 'Trainee Added Register');
     }
 
     public function mount(){

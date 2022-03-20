@@ -22,8 +22,12 @@ class TraineeFactory extends Factory
             'course' => "Amber Group",
             'DOB' => $this->faker->date(),
             'telephone' => $this->faker->phoneNumber(),
-            'gender' => "Male",
-            'room' => $this->faker->randomElement(["A1", "A2", "A3", "A4", "A5", "A6", "A7", "A8", "A10", "A11", "A12"])
+            'gender' => $this->faker->randomElement(["Male", "Female"]),
+            'room' => $this->faker->randomElement(["A1", "A2", "A3", "A4", "A5",
+                "A6", "A7", "A8", "A10", "A11", "A12",
+                "B14", "B15", "B16", "B17", "B18", "B19", "B20", "B21", "B22", "B23",
+                "B24", "C27", "C28", "C29", "C30"
+            ])
 
         ];
     }
