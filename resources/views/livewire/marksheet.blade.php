@@ -28,7 +28,6 @@
                         <td class="py-4 px-6 border-b border-grey-light">{{$marks->trainee->first_nm.' '.$marks->trainee->last_nm}}</td>
                         <td class="py-4 px-6 border-b border-grey-light">{{$marks->trainee->course}}</td>
                         <td class="py-4 px-6 border-b border-grey-light">{{$marks->trainee->room}}</td>
-{{--                        <td class="py-4 px-6 border-b border-grey-light">--}}
                         @if ($marks->mark === 0)
                             <td class="py-4 px-6 border-b border-grey-light">{{ ('Not Mark') }}</td>
                         @elseif($marks->mark === 1)
@@ -36,10 +35,10 @@
                         @elseif($marks->mark === 2)
                             <td class="py-4 px-6 border-b border-grey-light">{{ ('Absent') }}</td>
                             @endif
-{{--                        </td>--}}
+
 
                         @if ($marks->mark === 0)
-                            <td class="flex justify-center">
+                            <td class="flex justify-center mt-2">
                                 <form  class="px-2">
                                     <button type="submit"  wire:click.prevent="present({{ $marks->id, 1 }})" class="btn btn-primary p-2 text-white rounded bg-black hover:bg-green-500 hover:text-black">Present</button>
                                 </form>
@@ -49,14 +48,14 @@
                             </td>
                         @elseif ($marks->mark === 1)
 
-                            <td class="flex justify-center">
+                            <td class="flex justify-center mt-2">
                                 <form  >
                                     <button type="submit" wire:click.prevent="absent({{$marks->id,  2 }})"  class="btn btn-primary p-2 text-white rounded bg-black hover:bg-red-600 hover:text-black">Absent</button>
                                 </form>
                             </td>
                         @elseif ($marks->mark === 2)
 
-                            <td class="flex justify-center">
+                            <td class="flex justify-center mt-2">
                                 <form  >
                                     <button type="submit"  wire:click.prevent="present({{ $marks->id, 1 }})" class="btn btn-primary p-2 text-white rounded bg-black hover:bg-green-500 hover:text-black">Present</button>
 
