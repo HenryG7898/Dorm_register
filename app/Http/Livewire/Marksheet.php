@@ -14,6 +14,10 @@ class Marksheet extends Component
     }
 
     public function present($id){
+        $trainee = \App\Models\marksheet::where('id', $id)->update(['mark'=>1]);
+    }
+
+    public function absent($id){
         $trainee = \App\Models\marksheet::where('id', $id)->update(['mark'=>2]);
     }
 }
