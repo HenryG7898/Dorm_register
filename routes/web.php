@@ -18,9 +18,12 @@ Route::view('login', 'Login');
 
 Route::view('marksheet', 'Admin.marksheet')->name('mark-sheet');
 Route::view('add/trainee-to-register', 'Admin.add-to-sheet')->name('add-to-register');
+Route::post('Register-mark',[\App\Http\Controllers\RegisterMarkController::class,'store']);
 
 Route::group(["prefix" => "create"], function () {
     Route::view('trainee', 'Admin.addtrainee')->name('add-trainee');
+    Route::view('dorm-room', 'Admin.addDorm')->name('dorm-room');
+    Route::view('course', 'Admin.addCourse')->name('Tcourse');
     Route::view('dorm-warden', 'Admin.addwarden')->name('add-dorm-warden');
     Route::view('course', 'Admin.addprogram')->name("add-course");
 });

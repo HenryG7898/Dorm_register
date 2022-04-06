@@ -5,11 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class dorm extends Model
+class register_mark extends Model
 {
     use HasFactory;
 
     protected $fillable = [
-      'dorm_room'
+        'trainee_nm',
+        'dorm_rm',
+        'marking'
     ];
 }
