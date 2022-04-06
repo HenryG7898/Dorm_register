@@ -25,33 +25,35 @@
                 <form wire:submit.prevent="store">
 
                 @foreach($mark as $marks)
+
                         <tr class="hover:bg-red-700">
-                            <input type="hidden" name="trainee_id[]" value="1">
+                            <td><input class="border border-black" type="text" wire:model="trainee_id"  value="{{$marks->id}}" ></td>
                             <td class="py-4 px-6 border-b border-grey-light">
                                 {{$marks->trainee->first_nm.' '.$marks->trainee->last_nm}}
-                                <input type="text" wire:model="trainee" value="{{$marks->trainee->first_nm.' '.$marks->trainee->last_nm}}" hidden disabled>
+
+                                <input type="text" wire:model="trainee"  value="{{$marks->trainee->first_nm.' '.$marks->trainee->last_nm}}" hidden>
                             </td>
                             <td class="py-4 px-6 border-b border-grey-light">
                                 {{$marks->trainee->course}}
                             </td>
                             <td class="py-4 px-6 border-b border-grey-light">
                                 {{$marks->trainee->room}}
-                                <input type="text" wire:model="dorm_nm[]" value="{{$marks->trainee->room}}" hidden disabled >
+                                <input type="text" wire:model="dorm_nm" value="{{$marks->trainee->room}}" >
                             </td>
                             @if ($marks->mark === 0)
                                 <td class="py-4 px-6 border-b border-grey-light">
                                     {{ ('Not Mark') }}
-                                    <input type="text" wire:model="marking[]" value="{{ ('Not Mark') }}" hidden disabled>
+                                    <input type="text" wire:model="marking" value="{{ ('Not Mark') }}" >
                                 </td>
                             @elseif($marks->mark === 1)
                                 <td class="py-4 px-6 border-b border-grey-light">
                                     {{ ('Present') }}
-                                    <input type="text" wire:model="marking[]" value="{{ ('Present') }}" hidden disabled>
+                                    <input type="text" wire:model="marking" value="{{ ('Present') }}" >
                                 </td>
                             @elseif($marks->mark === 2)
                                 <td class="py-4 px-6 border-b border-grey-light">
                                     {{ ('Absent') }}
-                                    <input type="text" wire:model="marking[]" value="{{ ('Absent') }}" hidden disabled>
+                                    <input type="text" wire:model="marking" value="{{ ('Absent') }}">
                                 </td>
                                 @endif
 

@@ -13,6 +13,9 @@ class Marksheet extends Component
     public $dorm_nm;
     public $marking;
     public $trainee_id;
+    public $mark = [''];
+
+    public $dorm_id = [];
 
 
 //    protected $rules = [
@@ -25,8 +28,16 @@ class Marksheet extends Component
     public function render()
     {
 //        $user = DB::table('trainee')->orderBy('room', 'asc')->get();
+//        $mark = \App\Models\marksheet::with('trainee')->get();
+        return view('livewire.marksheet');
+    }
+
+    public function mount(){
         $mark = \App\Models\marksheet::with('trainee')->get();
-        return view('livewire.marksheet', ['mark'=>$mark]);
+        $dorm = \App\Models\marksheet::with('trainee')->get();
+        $this->mark = $mark;
+        $this->dorm_id =$dorm;
+
     }
 
     public function present($id){
@@ -46,18 +57,19 @@ class Marksheet extends Component
        //dd($newStatus);
     }
     public function store(){
-        $trainee_id = $this->trainee_id;
-        $trainee = $this->trainee;
-        $dorm_nm = $this->dorm_nm;
-        $marking = $this->marking;
+        dd($this->all());
+//        $trainee_id = $this->trainee_id;
+//        $this->trainee_id =  trainee_id;
+//        $trainee = $this->trainee;
+//        $dorm_id = $this->dorm_id;
+//        $marking = $this->marking;
 //
-        $datasave = [
-          'trainee_id' => $trainee_id,
-          'trainee' => $trainee,
-            'dorm_nm' => $dorm_nm,
-            'marking' => $marking
-        ];
-        dd($datasave);
-
+//        $datasave = [
+//          'trainee_id' => $trainee_id,
+//          'trainee' => $trainee,
+//            'dorm_nm' => $dorm_id,
+//            'marking' => $marking
+//        ];
+//        dd($datasave);
     }
 }
